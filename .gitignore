@@ -1,0 +1,22 @@
+# vagrant設定ディレクトリ
+.vagrant/
+
+# Eclipse 設定ファイル
+.settings/
+*.prefs
+
+# Eclipse Projectファイル
+.project
+
+# Eclipse Project includePath設定ファイル
+.buildpath
+
+# NetBeansプロジェクト設定ディレクトリ
+nbproject/
+
+# Mac用ディレクトリ設定ファイル
+.DS_Store
+
+# IntelliJ IDEA設定ファイル
+.idea
+rails5-vagrant.iml
