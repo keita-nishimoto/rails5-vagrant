@@ -16,7 +16,12 @@ Vagrant.configure(2) do |config|
   %w(
     rails5-api-prototype
   ).each do |dir|
-    config.vm.synced_folder "../#{dir}", "/home/vagrant/#{dir}", mount_options: ["dmode=777","fmode=777"] if  File.exist?("../#{dir}")
+    config.vm.synced_folder "../#{dir}", "/home/vagrant/#{dir}",
+      type: "rsync",
+      owner: "vagrant",
+      group: "vagrant",
+      rsync__exclude: [".git/", "vendor/"],
+      mount_options: ["dmode=777","fmode=777"] if  File.exist?("../#{dir}")
   end
 
   config.vm.provision "ansible" do |ansible|
